@@ -67,7 +67,7 @@ function Login() {
                         label="Password: "
                         type="password"
                         placeholder="Enter your password"
-                        {...register("Password",{
+                        {...register("password",{
                             required: true,
                         })}
                         />

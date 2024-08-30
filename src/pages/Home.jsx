@@ -36,6 +36,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
+                
             </Container>
         </div>
   )

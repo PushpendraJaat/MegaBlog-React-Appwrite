@@ -68,7 +68,6 @@ function Signup() {
                                 }
                             })}
                         />
-
                         <Input
                             label="Password"
                             placeholder="Enter your password"
@@ -77,7 +76,6 @@ function Signup() {
                                 required: true,
                             })}
                         />
-
                         <Button
                             type="submit"
                             className="w-full"
@@ -85,7 +83,6 @@ function Signup() {
                     </div>
 
                 </form>
-
             </div>
         </div>
     )
