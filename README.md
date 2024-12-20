@@ -25,7 +25,7 @@ MegaBlog is a modern blog application built with **React** and **Appwrite**, des
 
 ## Demo
 
-Check out the live demo: [MegaBlog Demo](https://mega-blog-react-appwrite.vercel.app/post/what-is-react)
+Check out the live demo: [MegaBlog Demo](https://mega-blog-react-appwrite.vercel.app/)
 
 ## Technologies Used
 
