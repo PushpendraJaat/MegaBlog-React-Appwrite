@@ -36,12 +36,12 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-customdarkblue'>
       <Container>
         <nav className='flex'>
-          <div className='mr-4'>
+          <div className='md:m-2 m-auto hover:shadow-lg'>
             <Link to='/'>
-              <Logo width='80px'/>
+              <Logo style={{ width: '150px' }}/>
             </Link>
           </div>
           <ul className='flex ml-auto'>
@@ -50,7 +50,7 @@ function Header() {
                 <li key={item.name}>
                   <button
                   onClick={() => navigate(item.slug)}
-                  className='inline-block px-6 py-2 duration-200 hover:ng-blue-100 rounded-full'
+                  className='inline-block px-6 py-2 duration-200 hover:cursor-pointer hover:bg-blue-100 rounded-full hover:text-customdarkblue'
                   >{item.name}</button>
                 </li>
               ) : null
