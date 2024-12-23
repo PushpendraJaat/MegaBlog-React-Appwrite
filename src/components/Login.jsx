@@ -5,13 +5,16 @@ import { Button, Input, Logo } from './index'
 import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
 import { useForm } from 'react-hook-form'
+import { Grid } from 'react-loader-spinner'
 
 function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { register, handleSubmit } = useForm()
     const [error, setError] = useState("")
+    const [isLoading, setIsLoading] = useState(false); // Loading state
     const login = async (data) => {
+        setIsLoading(true);
         setError("")
         try {
             const session = await authService.login(data)
@@ -26,8 +29,27 @@ function Login() {
         catch (error) {
             setError(error.message)
         }
+        finally{
+            setIsLoading(false)
+        }
     }
 
+      if (isLoading) {
+            return (
+            <div className="flex justify-center items-center h-96" aria-live="polite">
+                <Grid
+                    visible={true}
+                    height="100"
+                    width="100"
+                    color="#50727B"
+                    ariaLabel="grid-loading"
+                    radius="12.5"
+                    wrapperStyle={{}}
+                    wrapperClass="grid-wrapper"
+                />
+            </div>
+            )
+        }
     return (
         <div className='flex items-center justify-center w-full'>
             <div className={`mx-auto w-full max-w-lg bg-gray-100 my-8 rounded-xl p-10 border border-black/10`}>

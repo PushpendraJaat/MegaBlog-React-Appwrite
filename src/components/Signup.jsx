@@ -5,14 +5,17 @@ import { login } from '../store/authSlice'
 import { Button, Input, Logo } from './index'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
+import { Grid } from 'react-loader-spinner'
 
 function Signup() {
     const navigate = useNavigate()
     const [error, setError] = useState("")
     const dispatch = useDispatch()
     const { register, handleSubmit } = useForm()
+    const [isLoading, setIsLoading] = useState(false); // Loading state
 
     const create = async (data) => {
+        setIsLoading(true);
         setError("")
         try {
             const userData = await authService.createAccount(data)
@@ -24,7 +27,27 @@ function Signup() {
         } catch (error) {
             setError(error.message)
         }
+        finally {
+            setIsLoading(false);
+        }
     }
+
+      if (isLoading) {
+                return (
+                <div className="flex justify-center items-center h-96" aria-live="polite">
+                    <Grid
+                        visible={true}
+                        height="100"
+                        width="100"
+                        color="#50727B"
+                        ariaLabel="grid-loading"
+                        radius="12.5"
+                        wrapperStyle={{}}
+                        wrapperClass="grid-wrapper"
+                    />
+                </div>
+                )
+            }
 
     return (
         <div className="flex items-center justify-center">
