@@ -1,9 +1,11 @@
 import React from 'react'
+import logo from '../../src/img/mlogo.jpg'
+
 
 function Logo({ style }) {
   return (
     <div>
-      <img src="../../static/img/mlogo.jpg" alt="new logo" style={style} />
+      <img src={logo} alt="new logo" style={style} />
     </div>
   )
 }
