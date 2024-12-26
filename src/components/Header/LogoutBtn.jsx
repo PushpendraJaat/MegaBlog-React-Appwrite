@@ -12,6 +12,7 @@ function LogoutBtn() {
       dispatch(logout())
   }).then(() => {
     window.location.reload(false);
+    window.location.href = '/';
   })
   }
 
