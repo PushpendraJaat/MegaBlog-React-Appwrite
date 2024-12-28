@@ -37,7 +37,7 @@ function Header() {
   ];
 
   return (
-    <header className='py-3 shadow bg-customdarkblue'>
+    <header className='py-3 shadow bg-customdarkblue z-10'>
       <Container>
         <nav className='flex items-center justify-between'>
           {/* Logo */}
